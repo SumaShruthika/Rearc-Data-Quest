@@ -6,5 +6,5 @@ Public datasets are fetched from BLS URL and published to `rearc-data-quest-ssm`
 - Files are streamed directly to S3 without local storage
 - Setup does not throw 403 error and is compliant with BLS data access policies
 
-**S3 Data Link** : https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/
-**Source Code** : 
+**S3 Data Link** : https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/  
+**Source Code** : [bls_pr_sync.py](https://github.com/sumashruthika/rearc-data-quest/blob/main/part1-bls-sync/bls_pr_sync.py)
