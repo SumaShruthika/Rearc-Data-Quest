@@ -19,17 +19,20 @@ def fetch_bls_file_list(BLS_URL):
     scan bls dir and fetch the list of files from the BLS URL.
     Returns a list of file names.
     """
-    response = requests.get(BLS_URL, headers=HEADERS)
-    response.raise_for_status()
-    soup = BeautifulSoup(response.text, 'html.parser')
+    try:
+        response = requests.get(BLS_URL, headers=HEADERS)
+        response.raise_for_status()
+        soup = BeautifulSoup(response.text, 'html.parser')
 
-    file_names = [
-        a["href"].split("/")[-1]
-        for a in soup.find_all("a", href=True)
-        if a["href"].startswith("/pub/time.series/pr/pr.")
-    ]
-
-    return file_names
+        file_names = [
+            a["href"].split("/")[-1]
+            for a in soup.find_all("a", href=True)
+            if a["href"].startswith("/pub/time.series/pr/pr.") 
+        ]
+        return file_names   
+    except requests.RequestException as e:
+        print(f"Error fetching BLS file list: {e}")
+        return None
 
 def calculate_md5(content):
     """
