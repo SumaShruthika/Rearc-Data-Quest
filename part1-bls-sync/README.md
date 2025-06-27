@@ -24,5 +24,5 @@ Public datasets are fetched from BLS URL and published to `rearc-data-quest-ssm`
 
 **Upload Result**
 
-![BLS_data_bucket](resources/bls_data_bucket.png)
+![BLS_data_bucket](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/9909c2003ef715d8c04973ef9a0769e20343e228/resources/nation_population_bucket.png)
   
