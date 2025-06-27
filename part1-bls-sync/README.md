@@ -24,5 +24,5 @@ Public datasets are fetched from BLS URL and published to `rearc-data-quest-ssm`
 
 **Upload Result**
 
-
+![BLS_data_bucket](resources/bls_data_bucket.png)
   
