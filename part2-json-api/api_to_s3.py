@@ -11,10 +11,14 @@ def fetch_api_data(api_url):
     """
     Fetch data from the API and return JSON.
     """
-    response = requests.get(api_url)
-    response.raise_for_status()
-    return response.json()
-
+    try:
+        response = requests.get(api_url)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching data from API: {e}")
+        return None
+    
 def save_json_to_s3(data, bucket, key):
     """
     Save JSON data to S3 as a file.
