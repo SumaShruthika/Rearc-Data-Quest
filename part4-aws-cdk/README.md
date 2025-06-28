@@ -1,58 +1,50 @@
+# **Infrastructure as Code (IaC) and Automated Data Pipeline (CDK)** 
+CDK IaC Source Code : [CDK Stack](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/408321e3bd6be020eeec5a4a2cfecfc56a257ead/part4-aws-cdk/part4_aws_cdk/part4_aws_cdk_stack.py)  
 
-# Welcome to your CDK Python project!
+**AWS Resources Created**
+This CDK deployment creates the following AWS resources:
+- **S3 Bucket:** `lambda-pipeline-data-bucket` - Stores BLS data files and population JSON data
+- **Lambda Functions:**
+  `data-ingestion-lambda` - Downloads and processes data from external APIs daily
+  `data-analysis-lambda` - Processes data when triggered by S3 events
+- **SQS Queue:** `data-processing-queue` - Queues messages when new data is uploaded to S3
+- **EventBridge Rule:** `daily-data-ingestion-trigger` - Triggers the ingestion Lambda daily
+- **IAM Roles:** Auto-generated roles with appropriate permissions for Lambda execution
 
-This is a blank project for CDK development with Python.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+Built a serverless data pipeline using CDK that automates:
+- Data ingestion from the BLS and Population API (Part 1 and 2)
+  - Ingestion Lambda function Source Code : [Ingestion Lambda Function](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/f52893781bd02de581036b6bc33e41db37877e79/part4-aws-cdk/lambda_functions/data_ingestion/lambda_func.py)
+- Daily sync schedule using EventBridge
+- Event-driven data processing using SQS and Lambda (Part 3)
+  - Analysis Lambda function Source Code : [Analysis Lambda Function](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/c8cc65181e03adf91b9c296ddfa8ebd6a209383a/part4-aws-cdk/lambda_functions/data_analysis/lambda_func.py)
 
-This project is set up like a standard Python project.  The initialization
-process also creates a virtualenv within this project, stored under the `.venv`
-directory.  To create the virtualenv it assumes that there is a `python3`
-(or `python` for Windows) executable in your path with access to the `venv`
-package. If for any reason the automatic creation of the virtualenv fails,
-you can create the virtualenv manually.
+**Pipeline Architecture**  
+| Resource | Purpose |
+|----------|---------|
+| S3 Bucket | Stores both raw BLS and population datasets |
+| Lambda (Ingestion) | Fetches BLS + API data daily and uploads to S3 |
+| EventBridge Rule | Triggers ingestion Lambda daily |
+| SQS Queue | Gets triggered when new population JSON is uploaded to S3 |
+| Lambda (Analytics) | Processes messages from SQS, reads both datasets, and logs analysis |
 
-To manually create a virtualenv on MacOS and Linux:
+**Pipeline Flow (Implemented)**  
+- **Daily Data Ingestion**: EventBridge triggers a Lambda function daily to fetch BLS data and population data from APIs, storing both datasets in S3 under separate prefixes.
+- **Event-Driven Processing**: When new JSON files are uploaded to S3, an event notification triggers an SQS queue, which then invokes an analytics Lambda function.
+- **Analytics & Reporting**: The analytics Lambda reads both datasets, computes population statistics (mean/std dev for 2013-2018), identifies the best performing year by series ID, creates a joined report for series `PRS30006032` with population data, and logs all results.
 
-```
-$ python3 -m venv .venv
-```
+![Part4_pipeline](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/b43c701d9c01ecb9e5f2aa1dc4f24afb368f5b49/resources/Part4_pipeline.png)
 
-After the init process completes and the virtualenv is created, you can use the following
-step to activate your virtualenv.
+**Future Optimizations**  
+- **Data Architecture**: I would implement `Bronze/Silver/Gold` data layers across separate S3 buckets for improved data quality and lineage tracking
+- **Error Handling & Monitoring**: I would add `DLQ` for failed messages and `SNS` notifications for real-time pipeline failure alerts  
+- **Reporting**: I would integrate `Amazon QuickSight` for interactive dashboards and user-friendly reporting
+- **Security and Network Isolation**: I would deploy infrastructure in private `VPC` subnets for improved security and compliance
 
-```
-$ source .venv/bin/activate
-```
+ ![Enhanced_Pipeline](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/458099ae1b596db925198fa5ac68ae17899294c9/resources/Enhanced_Part4_Pipeline.png) 
 
-If you are a Windows platform, you would activate the virtualenv like this:
+**Outputs & Proof of Execution**  
+I have included a pipeline architecture diagram based on the resources deployed by the CDK infrastructure. For verification of specific resource configurations, all CDK outputs are available in the [resources](https://github.com/SumaShruthika/Rearc-Data-Quest/tree/9a0c6ae8dfb829088422105b4f1801195804d9cc/resources) folder with the `Part4` prefix.
 
-```
-% .venv\Scripts\activate.bat
-```
+![Output_Proof](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/4b7882a6dd9e6ffd64fd4410a8cd7e8ca27292c9/resources/Output_Proof.jpeg)
 
-Once the virtualenv is activated, you can install the required dependencies.
-
-```
-$ pip install -r requirements.txt
-```
-
-At this point you can now synthesize the CloudFormation template for this code.
-
-```
-$ cdk synth
-```
-
-To add additional dependencies, for example other CDK libraries, just add
-them to your `setup.py` file and rerun the `pip install -r requirements.txt`
-command.
-
-## Useful commands
-
- * `cdk ls`          list all stacks in the app
- * `cdk synth`       emits the synthesized CloudFormation template
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk docs`        open CDK documentation
-
-Enjoy!
