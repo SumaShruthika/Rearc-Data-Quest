@@ -10,9 +10,9 @@ BUCKET_NAME = os.getenv("BUCKET_NAME")
 BLS_URL = os.getenv("BLS_URL")
 BLS_PREFIX = os.getenv("BLS_PREFIX")
 HEADERS = {
-    'User-Agent': 'RearcDataQuest/1.0 (Educational Research; contact: sumashruthikamaheshkumar@gmail.com)',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-    'Accept-Language': 'en-US,en;q=0.5'
+    'User-Agent': 'RearcDataQuest/ (contact: sumashruthikamaheshkumar@gmail.com)'
+    # 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    # 'Accept-Language': 'en-US,en;q=0.5'
 }
 
 s3_client = boto3.client("s3")

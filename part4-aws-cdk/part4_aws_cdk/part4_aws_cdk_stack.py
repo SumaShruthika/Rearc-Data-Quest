@@ -20,7 +20,9 @@ class Part4AwsCdkStack(Stack):
         
         # 1. Create S3 bucket
         data_bucket = s3.Bucket(self, "LambdaDataBucket",
-        bucket_name="lambda-pipeline-data-bucket")
+        bucket_name="lambda-pipeline-data-bucket",
+        tags={"Project": "RearcDataQuest"}
+        )
         
         # 2. Define the ingestion Lambda function with dependencies bundled
         ingestion_lambda = _lambda.Function(
