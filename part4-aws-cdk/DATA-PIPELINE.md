@@ -31,5 +31,5 @@ Built a serverless data pipeline using CDK that automates:
 **Outputs & Proof of Execution**  
 I have included a pipeline architecture diagram based on the resources deployed by the CDK infrastructure. For verification of specific resource configurations, all CDK outputs are available in the [resources](https://github.com/SumaShruthika/Rearc-Data-Quest/tree/9a0c6ae8dfb829088422105b4f1801195804d9cc/resources) folder with the `Part4` prefix.
 
-![output_proof](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/485539c33058b6d534df0f83da58da59ace74101/resources/Output_Proof.jpeg)
+![Output_Proof](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/485539c33058b6d534df0f83da58da59ace74101/resources/Output_Proof.jpeg)
 
