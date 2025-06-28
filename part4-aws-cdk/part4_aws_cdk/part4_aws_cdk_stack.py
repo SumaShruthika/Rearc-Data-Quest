@@ -20,13 +20,14 @@ class Part4AwsCdkStack(Stack):
         
         # 1. Create S3 bucket
         data_bucket = s3.Bucket(self, "LambdaDataBucket",
-        bucket_name="lambda-pipe-data-bucket")
+        bucket_name="lambda-pipeline-data-bucket")
         
         # 2. Define the ingestion Lambda function with dependencies bundled
         ingestion_lambda = _lambda.Function(
             self, "IngestionLambda",
             runtime=_lambda.Runtime.PYTHON_3_9,
             handler="lambda_func.lambda_handler", 
+            function_name="data-ingestion-lambda",
             code=_lambda.Code.from_asset(
                 "lambda_functions/data_ingestion",
                 bundling=BundlingOptions( 
@@ -54,6 +55,7 @@ class Part4AwsCdkStack(Stack):
         # 4. Set up a daily trigger for the Lambda
         daily_schedule = events.Rule(
             self, "DailyLambdaSchedule",
+            rule_name="daily-data-ingestion-trigger",
             schedule=events.Schedule.rate(Duration.days(1))
         )
         daily_schedule.add_target(targets.LambdaFunction(ingestion_lambda))
@@ -68,7 +70,7 @@ class Part4AwsCdkStack(Stack):
 
         # 6. Add S3 event notification to push to SQS when the JSON is uploaded
         data_bucket.add_event_notification(
-            s3.EventType.OBJECT_CREATED,
+            s3.EventType.OBJECT_CREATED, # CHECK OBEJECT_UPDATED
             s3n.SqsDestination(processing_queue),
             s3.NotificationKeyFilter(
                 prefix="population-data/",
@@ -81,6 +83,7 @@ class Part4AwsCdkStack(Stack):
             runtime=_lambda.Runtime.PYTHON_3_9,
             architecture=_lambda.Architecture.ARM_64,
             handler="lambda_func.lambda_handler",
+            function_name="data-analysis-lambda",
             code=_lambda.Code.from_asset(
             "lambda_functions/data_analysis",
             bundling=BundlingOptions(
