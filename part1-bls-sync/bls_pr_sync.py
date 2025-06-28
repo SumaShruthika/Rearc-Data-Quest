@@ -50,9 +50,8 @@ def get_s3_file_list():
 
     for page in paginator.paginate(Bucket=BUCKET_NAME, Prefix=S3_PREFIX):
         for obj in page.get("Contents", []):
-            # Extract only the file name, not the full key
             file_key = obj['Key'].split("/")[-1]
-            if file_key:  # Ignore empty strings
+            if file_key:
                 existing_files.append(file_key)
 
     return existing_files
