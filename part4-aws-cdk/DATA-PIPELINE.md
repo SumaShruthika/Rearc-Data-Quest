@@ -1,6 +1,17 @@
 # **Infrastructure as Code (IaC) and Automated Data Pipeline (CDK)** 
-
 CDK IaC Source Code : [CDK Stack](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/408321e3bd6be020eeec5a4a2cfecfc56a257ead/part4-aws-cdk/part4_aws_cdk/part4_aws_cdk_stack.py)  
+
+**AWS Resources Created**
+This CDK deployment creates the following AWS resources:
+- **S3 Bucket:** `lambda-pipeline-data-bucket` - Stores BLS data files and population JSON data
+- **Lambda Functions:**
+  `data-ingestion-lambda` - Downloads and processes data from external APIs daily
+  `data-analysis-lambda` - Processes data when triggered by S3 events
+- **SQS Queue:** `data-processing-queue` - Queues messages when new data is uploaded to S3
+- **EventBridge Rule:** `daily-data-ingestion-trigger` - Triggers the ingestion Lambda daily
+- **IAM Roles:** Auto-generated roles with appropriate permissions for Lambda execution
+
+
 Built a serverless data pipeline using CDK that automates:
 - Data ingestion from the BLS and Population API (Part 1 and 2)
   - Ingestion Lambda function Source Code : [Ingestion Lambda Function](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/f52893781bd02de581036b6bc33e41db37877e79/part4-aws-cdk/lambda_functions/data_ingestion/lambda_func.py)
