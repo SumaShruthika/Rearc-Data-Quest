@@ -1,0 +1,19 @@
+# **Infrastructure as Code (IaC) and Automated Data Pipeline (CDK)**  
+Built a serverless data pipeline using CDK that automates:
+- Data ingestion from the BLS and Population API (Part 1 and 2)
+- Daily sync schedule using EventBridge
+- Event-driven data processing using SQS and Lambda (Part 3)
+
+**Pipeline Architecture**  
+| Resource | Purpose |
+|----------|---------|
+| S3 Bucket | Stores both raw BLS and population datasets |
+| Lambda (Ingestion) | Fetches BLS + API data daily and uploads to S3 |
+| EventBridge Rule | Triggers ingestion Lambda daily |
+| SQS Queue | Gets triggered when new population JSON is uploaded to S3 |
+| Lambda (Analytics) | Processes messages from SQS, reads both datasets, and logs analysis |
+
+**Pipeline Flow (Implemented)**  
+- **Daily Data Ingestion**: EventBridge triggers a Lambda function daily to fetch BLS data and population data from APIs, storing both datasets in S3 under separate prefixes.
+- **Event-Driven Processing**: When new JSON files are uploaded to S3, an event notification triggers an SQS queue, which then invokes an analytics Lambda function.
+- **Analytics & Reporting**: The analytics Lambda reads both datasets, computes population statistics (mean/std dev for 2013-2018), identifies the best performing year by series ID, creates a joined report for series `PRS30006032` with population data, and logs all results.
