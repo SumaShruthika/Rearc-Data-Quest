@@ -103,13 +103,14 @@ class Part4AwsCdkStack(Stack):
                 )
             ),
             timeout=Duration.minutes(5),
-            memory_size=512,
+            memory_size=512,S
             environment={
                 "BUCKET_NAME": data_bucket.bucket_name,
-                "BLS_URL": "https://download.bls.gov/pub/time.series/pr/",
-                "API_URL": "https://api.census.gov/data/2019/pep/population?get=POP,DATE_DESC&for=us:*",
+                # "BLS_URL": "https://download.bls.gov/pub/time.series/pr/",
+                # "API_URL": "https://api.census.gov/data/2019/pep/population?get=POP,DATE_DESC&for=us:*",
                 "BLS_PREFIX": "bls-data/",
                 "POPULATION_PREFIX": "population-data/",
+                "BLS_FILE_NAME": "pr.data.0.Current",
                 "JSON_FILE_NAME": "population.json"
             }
         )

@@ -9,7 +9,7 @@ def lambda_handler(event, context):
 
     # Get environment variables
     BUCKET_NAME = os.environ['BUCKET_NAME']
-    PR_PREFIX = os.environ['BLS_PREFIX'] + 'pr.data.0.Current'
+    PR_PREFIX = os.environ['BLS_PREFIX'] + os.environ['BLS_FILE_NAME']
     POPULATION_PREFIX = os.environ['POPULATION_PREFIX'] + os.environ['JSON_FILE_NAME']
 
     # Load BLS data from S3
