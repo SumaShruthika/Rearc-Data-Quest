@@ -1,8 +1,12 @@
-# **Infrastructure as Code (IaC) and Automated Data Pipeline (CDK)**  
+# **Infrastructure as Code (IaC) and Automated Data Pipeline (CDK)** 
+
+CDK IaC Source Code : 
 Built a serverless data pipeline using CDK that automates:
 - Data ingestion from the BLS and Population API (Part 1 and 2)
+  - Ingestion Lambda function Source Code : 
 - Daily sync schedule using EventBridge
 - Event-driven data processing using SQS and Lambda (Part 3)
+  - Analysis Lambda function Source Code : 
 
 **Pipeline Architecture**  
 | Resource | Purpose |
