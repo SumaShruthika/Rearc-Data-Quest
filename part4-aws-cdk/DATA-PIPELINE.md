@@ -1,6 +1,6 @@
 # **Infrastructure as Code (IaC) and Automated Data Pipeline (CDK)** 
 
-CDK IaC Source Code : 
+CDK IaC Source Code : [CDK Stack](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/408321e3bd6be020eeec5a4a2cfecfc56a257ead/part4-aws-cdk/part4_aws_cdk/part4_aws_cdk_stack.py)  
 Built a serverless data pipeline using CDK that automates:
 - Data ingestion from the BLS and Population API (Part 1 and 2)
   - Ingestion Lambda function Source Code : 
