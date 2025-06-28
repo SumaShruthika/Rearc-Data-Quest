@@ -6,7 +6,7 @@ Built a serverless data pipeline using CDK that automates:
   - Ingestion Lambda function Source Code : [Ingestion Lambda Function](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/f52893781bd02de581036b6bc33e41db37877e79/part4-aws-cdk/lambda_functions/data_ingestion/lambda_func.py)
 - Daily sync schedule using EventBridge
 - Event-driven data processing using SQS and Lambda (Part 3)
-  - Analysis Lambda function Source Code : 
+  - Analysis Lambda function Source Code : [Analysis Lambda Function](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/c8cc65181e03adf91b9c296ddfa8ebd6a209383a/part4-aws-cdk/lambda_functions/data_analysis/lambda_func.py)
 
 **Pipeline Architecture**  
 | Resource | Purpose |
