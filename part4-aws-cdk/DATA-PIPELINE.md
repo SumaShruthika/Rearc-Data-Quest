@@ -26,6 +26,6 @@ Built a serverless data pipeline using CDK that automates:
 - **Reporting**: I would integrate `Amazon QuickSight` for interactive dashboards and user-friendly reporting
 - **Security and Network Isolation**: I would deploy infrastructure in private `VPC` subnets for improved security and compliance
 
-  
+ ![Enhanced_Pipeline](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/458099ae1b596db925198fa5ac68ae17899294c9/resources/Enhanced_Part4_Pipeline.png) 
 
 **Outputs & Proof of Execution**
