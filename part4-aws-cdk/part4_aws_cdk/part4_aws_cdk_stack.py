@@ -1,6 +1,7 @@
 from aws_cdk import (
     Stack,
     Duration,
+    Tags,
     aws_s3 as s3,
     aws_lambda as _lambda,
     aws_events as events,
@@ -17,11 +18,14 @@ import os
 class Part4AwsCdkStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
+
+        # Apply tags to all resources in this stack
+        Tags.of(self).add("Project", "RearcDataQuest")
+        Tags.of(self).add("Environment", "dev")
         
         # 1. Create S3 bucket
         data_bucket = s3.Bucket(self, "LambdaDataBucket",
-        bucket_name="lambda-pipeline-data-bucket",
-        tags={"Project": "RearcDataQuest"}
+        bucket_name="lambda-pipeline-data-bucket"
         )
         
         # 2. Define the ingestion Lambda function with dependencies bundled
@@ -72,7 +76,7 @@ class Part4AwsCdkStack(Stack):
 
         # 6. Add S3 event notification to push to SQS when the JSON is uploaded
         data_bucket.add_event_notification(
-            s3.EventType.OBJECT_CREATED, # CHECK OBEJECT_UPDATED
+            s3.EventType.OBJECT_CREATED_PUT,
             s3n.SqsDestination(processing_queue),
             s3.NotificationKeyFilter(
                 prefix="population-data/",
