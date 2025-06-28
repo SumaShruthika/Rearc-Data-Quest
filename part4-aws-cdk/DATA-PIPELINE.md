@@ -20,6 +20,12 @@ Built a serverless data pipeline using CDK that automates:
 
 ![Part4_pipeline](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/b43c701d9c01ecb9e5f2aa1dc4f24afb368f5b49/resources/Part4_pipeline.png)
 
+**Future Optimizations**  
+- **Data Architecture**: I would implement `Bronze/Silver/Gold` data layers across separate S3 buckets for improved data quality and lineage tracking
+- **Error Handling & Monitoring**: I would add `DLQ` for failed messages and `SNS` notifications for real-time pipeline failure alerts  
+- **Reporting**: I would integrate `Amazon QuickSight` for interactive dashboards and user-friendly reporting
+- **Security and Network Isolation**: I would deploy infrastructure in private `VPC` subnets for improved security and compliance
 
+  
 
 **Outputs & Proof of Execution**
