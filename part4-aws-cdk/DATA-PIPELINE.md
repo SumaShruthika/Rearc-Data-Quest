@@ -4,6 +4,8 @@ CDK IaC Source Code : [CDK Stack](https://github.com/SumaShruthika/Rearc-Data-Qu
 Built a serverless data pipeline using CDK that automates:
 - Data ingestion from the BLS and Population API (Part 1 and 2)
   - Ingestion Lambda function Source Code : [Ingestion Lambda Function](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/f52893781bd02de581036b6bc33e41db37877e79/part4-aws-cdk/lambda_functions/data_ingestion/lambda_func.py)
+  - BLS S3 Bucket created by this function : [BLS Lambda S3 Bucket](https://lambda-pipeline-data-bucket.s3.us-east-1.amazonaws.com/bls-data/)
+  - POPULATION S3 Bucket created by this function : [Population Lambda S3 Bucket](https://lambda-pipeline-data-bucket.s3.us-east-1.amazonaws.com/population-data/)
 - Daily sync schedule using EventBridge
 - Event-driven data processing using SQS and Lambda (Part 3)
   - Analysis Lambda function Source Code : [Analysis Lambda Function](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/c8cc65181e03adf91b9c296ddfa8ebd6a209383a/part4-aws-cdk/lambda_functions/data_analysis/lambda_func.py)
