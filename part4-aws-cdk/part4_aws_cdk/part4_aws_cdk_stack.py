@@ -71,6 +71,7 @@ class Part4AwsCdkStack(Stack):
             self, "DataProcessingQueue",
             queue_name="data-processing-queue",
             visibility_timeout=Duration.minutes(5),
+            tags={"Project": "RearcDataQuest", "Environment": "dev"}
             retention_period=Duration.days(14)
         )
 
