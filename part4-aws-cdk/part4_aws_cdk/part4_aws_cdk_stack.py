@@ -71,7 +71,6 @@ class Part4AwsCdkStack(Stack):
             self, "DataProcessingQueue",
             queue_name="data-processing-queue",
             visibility_timeout=Duration.minutes(5),
-            tags={"Project": "RearcDataQuest", "Environment": "dev"}
             retention_period=Duration.days(14)
         )
 
@@ -103,11 +102,9 @@ class Part4AwsCdkStack(Stack):
                 )
             ),
             timeout=Duration.minutes(5),
-            memory_size=512,S
+            memory_size=512,
             environment={
                 "BUCKET_NAME": data_bucket.bucket_name,
-                # "BLS_URL": "https://download.bls.gov/pub/time.series/pr/",
-                # "API_URL": "https://api.census.gov/data/2019/pep/population?get=POP,DATE_DESC&for=us:*",
                 "BLS_PREFIX": "bls-data/",
                 "POPULATION_PREFIX": "population-data/",
                 "BLS_FILE_NAME": "pr.data.0.Current",
