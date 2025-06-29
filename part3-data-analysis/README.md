@@ -1,6 +1,6 @@
 Performed data analysis and answered questions 
 
-**Source Code** : [population.ipynb](part3-data-analysis/population.ipynb)
+**Source Code** : [population.ipynb](/part3-data-analysis/population.ipynb)
 
 **Question 1** : Calculated US population summary (2013-2018)
  - Mean : 317437383.0
