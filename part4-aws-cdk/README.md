@@ -43,10 +43,10 @@ Built a serverless data pipeline using CDK that automates:
 - **Reporting**: I would integrate `Amazon QuickSight` for interactive dashboards and user-friendly reporting
 - **Security and Network Isolation**: I would deploy infrastructure in private `VPC` subnets for improved security and compliance
 
- ![Enhanced_Pipeline](./resources/Enhanced_Part4_Pipeline.png) 
+ ![Enhanced_Pipeline](/resources/Enhanced_Part4_Pipeline.png) 
 
 **Outputs & Proof of Execution**  
-I have included a pipeline architecture diagram based on the resources deployed by the CDK infrastructure. For verification of specific resource configurations, all CDK output images are available in the [resources](./resources) folder with the `Part4` prefix.
+I have included a pipeline architecture diagram based on the resources deployed by the CDK infrastructure. For verification of specific resource configurations, all CDK output images are available in the [resources](/resources) folder with the `Part4` prefix.
 
-![Output_Proof](./resources/Output_Proof.jpeg)
+![Output_Proof](/resources/Output_Proof.jpeg)
 
