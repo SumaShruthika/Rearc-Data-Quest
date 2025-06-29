@@ -35,7 +35,7 @@ Built a serverless data pipeline using CDK that automates:
 - **Event-Driven Processing**: When new JSON files are uploaded to S3, an event notification triggers an SQS queue, which then invokes an analytics Lambda function.
 - **Analytics & Reporting**: The analytics Lambda reads both datasets, computes population statistics (mean/std dev for 2013-2018), identifies the best performing year by series ID, creates a joined report for series `PRS30006032` with population data, and logs all results.
 
-![Part4_pipeline](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/f215b568c786adccd1f54eea2650e22f6105217d/resources/Enhanced_Part4_Pipeline.png)
+![Part4_pipeline](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/d2319c3e56364b111dad363e1439d254e15f3dc2/resources/Part4_pipeline.png)
 
 **Future Optimizations**  
 - **Data Architecture**: I would implement `Bronze/Silver/Gold` data layers across separate S3 buckets for improved data quality and lineage tracking
