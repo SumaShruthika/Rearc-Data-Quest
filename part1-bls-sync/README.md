@@ -33,7 +33,7 @@ Public datasets are fetched from BLS URL and published to `rearc-data-quest-ssm`
 - I would use retry strategy for request Session. This would enable automatic retries on time-out issues or other common network errors.
 - I would implement and store **log.csv** file in S3 to append metadata about uploads and structured events (like hash mismatch, upload success/failure, skipped files etc). This would improve auditing
 - I would also add more file validation techniques. Currently the script only compares hash of files in source and datalake but I'd expand it to include `file size comparison`, `last modified timestamps` and possibly a `checksum` strategy for byte comparison.
-- I would include a staging area like a `\tmp` folder to preprocess files or enable batch processing. But as of now, the script directly streams data into S3 since it is ideal for lightweight public datasets.
+- I would include a staging area like a `\tmp` folder to preprocess files or enable batch processing (If the files need to be zipped before upload or in other scenarios). But as of now, the script directly streams data into S3 since it is ideal for lightweight public datasets.
 
 **Upload Result**
 
