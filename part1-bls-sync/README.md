@@ -1,18 +1,18 @@
 **BLS Data Sync to S3**
 
 **S3 Data Links** : 
-- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.series
-- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.txt
-- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.measure
-- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.period
-- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.seasonal
-- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.sector
-- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.duration
-- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.footnote
-- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.contacts
-- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.data.0.Current
-- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.data.1.AllData
-- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.class
+- [pr.series](https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.series)
+- [pr.txt](https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.txt)
+- [pr.measure](https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.measure)
+- [pr.period](https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.period)
+- [pr.seasonal](https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.seasonal)
+- [pr.sector](https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.sector)
+- [pr.duration](https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.duration)
+- [pr.footnote](https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.footnote)
+- [pr.contacts](https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.contacts)
+- [pr.data.0.Current](https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.data.0.Current)
+- [pr.data.1.AllData](https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.data.1.AllData)
+- [pr.class](https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.class)
   
 **Source Code** : [bls_pr_sync.py](https://github.com/sumashruthika/rearc-data-quest/blob/main/part1-bls-sync/bls_pr_sync.py)
 
