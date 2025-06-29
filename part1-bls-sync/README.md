@@ -14,7 +14,7 @@
 - [pr.data.1.AllData](https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.data.1.AllData)
 - [pr.class](https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.class)
   
-**Source Code** : [bls_pr_sync.py](https://github.com/sumashruthika/rearc-data-quest/blob/main/part1-bls-sync/bls_pr_sync.py)
+**Source Code** : [bls_pr_sync.py](/part1-bls-sync/bls_pr_sync.py)
 
 Public datasets are fetched from BLS URL and published to `rearc-data-quest-ssm` S3 bucket. The sync script ensures:
 - Files are dynamically discovered
@@ -37,5 +37,5 @@ Public datasets are fetched from BLS URL and published to `rearc-data-quest-ssm`
 
 **Upload Result**
 
-![BLS_data_bucket](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/60bccd01974027867776ace365c7e9888b5cbf21/resources/bls_data_bucket.png)
+![BLS_data_bucket](/resources/bls_data_bucket.png)
   
