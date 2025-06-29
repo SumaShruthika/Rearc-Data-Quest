@@ -1,6 +1,19 @@
 **BLS Data Sync to S3**
 
-**S3 Data Link** : https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/  
+**S3 Data Links** : 
+- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.series
+- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.txt
+- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.measure
+- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.period
+- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.seasonal
+- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.sector
+- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.duration
+- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.footnote
+- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.contacts
+- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.data.0.Current
+- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.data.1.AllData
+- https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/bls/pr/pr.class
+  
 **Source Code** : [bls_pr_sync.py](https://github.com/sumashruthika/rearc-data-quest/blob/main/part1-bls-sync/bls_pr_sync.py)
 
 Public datasets are fetched from BLS URL and published to `rearc-data-quest-ssm` S3 bucket. The sync script ensures:
