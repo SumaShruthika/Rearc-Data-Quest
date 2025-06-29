@@ -1,5 +1,5 @@
 # **Infrastructure as Code (IaC) and Automated Data Pipeline (CDK)** 
-CDK IaC Source Code : [CDK Stack](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/408321e3bd6be020eeec5a4a2cfecfc56a257ead/part4-aws-cdk/part4_aws_cdk/part4_aws_cdk_stack.py)    
+CDK IaC Source Code : [CDK Stack](part4-aws-cdk/part4_aws_cdk/part4_aws_cdk_stack.py)    
 
 ( All resources for this pipeline can be identified using tags: `Project: RearcDataQuest` and `Environment: dev`)
 
