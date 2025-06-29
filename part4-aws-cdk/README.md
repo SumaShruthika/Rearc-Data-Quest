@@ -16,10 +16,10 @@ This CDK deployment creates the following AWS resources:
 
 Built a serverless data pipeline using CDK that automates:
 - Data ingestion from the BLS and Population API (Part 1 and 2)
-  - Ingestion Lambda function Source Code : [Ingestion Lambda Function](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/f52893781bd02de581036b6bc33e41db37877e79/part4-aws-cdk/lambda_functions/data_ingestion/lambda_func.py)
+  - Ingestion Lambda function Source Code : [Ingestion Lambda Function](./lambda_functions/data_ingestion/lambda_func.py)
 - Daily sync schedule using EventBridge
 - Event-driven data processing using SQS and Lambda (Part 3)
-  - Analysis Lambda function Source Code : [Analysis Lambda Function](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/c8cc65181e03adf91b9c296ddfa8ebd6a209383a/part4-aws-cdk/lambda_functions/data_analysis/lambda_func.py)
+  - Analysis Lambda function Source Code : [Analysis Lambda Function](./lambda_functions/data_analysis/lambda_func.py)
 
 **Pipeline Architecture**  
 | Resource | Purpose |
@@ -35,7 +35,7 @@ Built a serverless data pipeline using CDK that automates:
 - **Event-Driven Processing**: When new JSON files are uploaded to S3, an event notification triggers an SQS queue, which then invokes an analytics Lambda function.
 - **Analytics & Reporting**: The analytics Lambda reads both datasets, computes population statistics (mean/std dev for 2013-2018), identifies the best performing year by series ID, creates a joined report for series `PRS30006032` with population data, and logs all results.
 
-![Part4_pipeline](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/8f51e7f4483092eafcd48e0b7c07e9b271984970/resources/Part4_pipeline.png)
+![Part4_pipeline](resources/Part4_pipeline.png)
 
 **Future Optimizations**  
 - **Data Architecture**: I would implement `Bronze/Silver/Gold` data layers across separate S3 buckets for improved data quality and lineage tracking
@@ -43,10 +43,10 @@ Built a serverless data pipeline using CDK that automates:
 - **Reporting**: I would integrate `Amazon QuickSight` for interactive dashboards and user-friendly reporting
 - **Security and Network Isolation**: I would deploy infrastructure in private `VPC` subnets for improved security and compliance
 
- ![Enhanced_Pipeline](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/f215b568c786adccd1f54eea2650e22f6105217d/resources/Enhanced_Part4_Pipeline.png) 
+ ![Enhanced_Pipeline](resources/Enhanced_Part4_Pipeline.png) 
 
 **Outputs & Proof of Execution**  
-I have included a pipeline architecture diagram based on the resources deployed by the CDK infrastructure. For verification of specific resource configurations, all CDK output images are available in the [resources](https://github.com/SumaShruthika/Rearc-Data-Quest/tree/9a0c6ae8dfb829088422105b4f1801195804d9cc/resources) folder with the `Part4` prefix.
+I have included a pipeline architecture diagram based on the resources deployed by the CDK infrastructure. For verification of specific resource configurations, all CDK output images are available in the [resources](resources) folder with the `Part4` prefix.
 
-![Output_Proof](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/4b7882a6dd9e6ffd64fd4410a8cd7e8ca27292c9/resources/Output_Proof.jpeg)
+![Output_Proof](resources/Output_Proof.jpeg)
 
