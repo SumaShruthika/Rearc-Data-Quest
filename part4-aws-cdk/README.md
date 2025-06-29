@@ -35,7 +35,7 @@ Built a serverless data pipeline using CDK that automates:
 - **Event-Driven Processing**: When new JSON files are uploaded to S3, an event notification triggers an SQS queue, which then invokes an analytics Lambda function.
 - **Analytics & Reporting**: The analytics Lambda reads both datasets, computes population statistics (mean/std dev for 2013-2018), identifies the best performing year by series ID, creates a joined report for series `PRS30006032` with population data, and logs all results.
 
-![Part4_pipeline](resources/Part4_pipeline.png)
+![Part4_pipeline](./resources/Part4_pipeline.png)
 
 **Future Optimizations**  
 - **Data Architecture**: I would implement `Bronze/Silver/Gold` data layers across separate S3 buckets for improved data quality and lineage tracking
@@ -43,10 +43,10 @@ Built a serverless data pipeline using CDK that automates:
 - **Reporting**: I would integrate `Amazon QuickSight` for interactive dashboards and user-friendly reporting
 - **Security and Network Isolation**: I would deploy infrastructure in private `VPC` subnets for improved security and compliance
 
- ![Enhanced_Pipeline](resources/Enhanced_Part4_Pipeline.png) 
+ ![Enhanced_Pipeline](./resources/Enhanced_Part4_Pipeline.png) 
 
 **Outputs & Proof of Execution**  
-I have included a pipeline architecture diagram based on the resources deployed by the CDK infrastructure. For verification of specific resource configurations, all CDK output images are available in the [resources](resources) folder with the `Part4` prefix.
+I have included a pipeline architecture diagram based on the resources deployed by the CDK infrastructure. For verification of specific resource configurations, all CDK output images are available in the [resources](./resources) folder with the `Part4` prefix.
 
-![Output_Proof](resources/Output_Proof.jpeg)
+![Output_Proof](./resources/Output_Proof.jpeg)
 
