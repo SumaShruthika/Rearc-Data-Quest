@@ -1,4 +1,4 @@
-**Source Code** : [api_to_s3.py](https://github.com/sumashruthika/rearc-data-quest/blob/main/part2-json-api/api_to_s3.py)  
+**Source Code** : [api_to_s3.py](/part2-json-api/api_to_s3.py)  
   **S3 Data Link** : [nation_population.json](https://rearc-data-quest-ssm.s3.us-east-2.amazonaws.com/usa-api-sync/population/nation_population.json)
 
 
@@ -10,4 +10,4 @@ The S3 bucket configurations are same as Part 1.
 - Since Part 1 and Part 2 have the same functionality, I would implement the enhancements listed in `part 1` like retry for request Session, have a metadata logging file and possibly include a staging area
 
 **Upload Result**
-![BLS_data_bucket](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/60bccd01974027867776ace365c7e9888b5cbf21/resources/nation_population_bucket.png)
+![BLS_data_bucket](/resources/nation_population_bucket.png)
