@@ -9,7 +9,7 @@ This CDK deployment creates the following AWS resources:
   `data-analysis-lambda` - Processes data when triggered by S3 events
 - **SQS Queue:** `data-processing-queue` - Queues messages when new data is uploaded to S3
 - **EventBridge Rule:** `daily-data-ingestion-trigger` - Triggers the ingestion Lambda daily
-- **IAM Roles:** Auto-generated roles with appropriate permissions for Lambda execution
+- **IAM Roles:** Auto-generated roles with appropriate permissions for Lambda execution  
 ( All resources for this pipeline can be identified using tags: `Project: RearcDataQuest` and `Environment: dev`)
 
 Built a serverless data pipeline using CDK that automates:
