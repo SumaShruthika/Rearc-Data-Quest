@@ -44,7 +44,7 @@ Built a serverless data pipeline using CDK that automates:
  ![Enhanced_Pipeline](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/458099ae1b596db925198fa5ac68ae17899294c9/resources/Enhanced_Part4_Pipeline.png) 
 
 **Outputs & Proof of Execution**  
-I have included a pipeline architecture diagram based on the resources deployed by the CDK infrastructure. For verification of specific resource configurations, all CDK outputs are available in the [resources](https://github.com/SumaShruthika/Rearc-Data-Quest/tree/9a0c6ae8dfb829088422105b4f1801195804d9cc/resources) folder with the `Part4` prefix.
+I have included a pipeline architecture diagram based on the resources deployed by the CDK infrastructure. For verification of specific resource configurations, all CDK output images are available in the [resources](https://github.com/SumaShruthika/Rearc-Data-Quest/tree/9a0c6ae8dfb829088422105b4f1801195804d9cc/resources) folder with the `Part4` prefix.
 
 ![Output_Proof](https://github.com/SumaShruthika/Rearc-Data-Quest/blob/4b7882a6dd9e6ffd64fd4410a8cd7e8ca27292c9/resources/Output_Proof.jpeg)
 
